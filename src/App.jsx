@@ -33,7 +33,7 @@ const App = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="flex justify-around">
+      <div className="flex justify-around mx-5">
         <Allproducts></Allproducts>
         <CartContainer isActive={isActive} handleIsActiveStatus={handleIsActiveStatus}></CartContainer>
       </div>
