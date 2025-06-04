@@ -1,6 +1,7 @@
 import React from "react";
 
-const CartContainer = () => {
+const CartContainer = ({handleIsActiveStatus, isActive}) => {
+    
   return (
     <div>
       <div className="card bg-base-100 w-96 shadow-sm">
@@ -19,16 +20,17 @@ const CartContainer = () => {
             A card component has a figure, a body part, and inside body there
             are title and actions parts
           </p>
-          <div className="card-actions  justify-between">
-            <button className="btn px-10 py-1 btn-outline btn-accent">
+          <div  className="card-actions  justify-between">
+            <button onClick={()=>handleIsActiveStatus('cart')} className={ isActive.cart? "btn px-10 py-1 bg-green-300  " : "btn px-10 py-1"}>
               Add to Cart
             </button>
-            <button className="btn btn-outline btn-info">Info</button>
+            <button onClick={()=>handleIsActiveStatus('about')} className={ isActive.cart ==false ? "btn px-10 py-1 bg-green-300  " : "btn px-10 py-1"}>Info</button>
           </div>
         </div>
       </div>
     </div>
   );
 };
+
 
 export default CartContainer;
