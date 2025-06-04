@@ -1,4 +1,6 @@
 import React from "react";
+import Cart from "../Cart/Cart";
+import About from "../About/About";
 
 const CartContainer = ({handleIsActiveStatus, isActive}) => {
     
@@ -20,7 +22,7 @@ const CartContainer = ({handleIsActiveStatus, isActive}) => {
             A card component has a figure, a body part, and inside body there
             are title and actions parts
           </p>
-          <div  className="card-actions  justify-between">
+          <div className="card-actions  justify-between">
             <button onClick={()=>handleIsActiveStatus('cart')} className={ isActive.cart? "btn px-10 py-1 bg-green-300  " : "btn px-10 py-1"}>
               Add to Cart
             </button>
@@ -28,6 +30,9 @@ const CartContainer = ({handleIsActiveStatus, isActive}) => {
           </div>
         </div>
       </div>
+
+      {isActive.cart? <Cart></Cart>:<About></About>}
+
     </div>
   );
 };
