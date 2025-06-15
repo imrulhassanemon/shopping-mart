@@ -20,9 +20,8 @@ const SingleProducts = ({ product }) => {
           <div className="badge badge-secondary">NEW</div>
         </h2>
         <p>
-          A card component has a figure, a body part, and inside body there are
-          title and actions parts
-        </p>
+          {description.length>100 ? description.slice(0, 100) + "..." : description}
+        </p>  
         <div className="card-actions justify-end">
           <div className="badge badge-outline">Fashion</div>
           <div className="badge badge-outline">Products</div>
