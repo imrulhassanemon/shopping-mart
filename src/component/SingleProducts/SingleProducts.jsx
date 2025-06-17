@@ -1,12 +1,13 @@
 import React from "react";
 
-const SingleProducts = ({ product }) => {
+const SingleProducts = ({ product , handleSelectedProduct }) => {
   const { id, title, price, description, category, image } = product;
-  console.log(id, title, price, description, category, image);
+  // console.log(id, title, price, description, category, image);
 
-  console.log(product);
+  console.log(handleSelectedProduct);
+
   return (
-    <div className="card bg-base-100 w-96 shadow-sm">
+    <div className="card bg-base-100 w-96 shadow-sm border-2 border-gray-200">
       <figure>
         <img
             className="h-60 w-full object-cover"
@@ -24,7 +25,7 @@ const SingleProducts = ({ product }) => {
         </p>  
         <div className="card-actions justify-end">
           <div className="badge badge-outline">Fashion</div>
-          <div className="badge badge-outline">Products</div>
+          <button className="btn bg-amber-300" onClick={() => handleSelectedProduct(product)}>add to cart</button> 
         </div>
       </div>
     </div>

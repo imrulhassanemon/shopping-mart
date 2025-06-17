@@ -13,6 +13,28 @@ const App = () => {
   });
 
 
+
+
+  const [selectedProduct, setSelectedProduct] = useState([])
+
+
+  const handleSelectedProduct = (product)=> {
+    
+    // const isAlreadySelected = selectedProduct.find((item) => item.id === product.id);
+    // if (isAlreadySelected) {
+    //   setSelectedProduct(selectedProduct.filter((item) => item.id !== product.id));
+    // } else {
+    //   setSelectedProduct([...selectedProduct, product]);
+    // }
+    setSelectedProduct([...selectedProduct, product]);;
+
+  }
+
+  console.log(selectedProduct);
+
+
+
+
   const handleIsActiveStatus = (status) => {
     if(status === 'cart'){
       setActive({
@@ -32,10 +54,10 @@ const App = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar selectedProduct={selectedProduct}></Navbar>
       <div className="flex justify-around mx-5">
-        <Allproducts></Allproducts>
-        <CartContainer isActive={isActive} handleIsActiveStatus={handleIsActiveStatus}></CartContainer>
+        <Allproducts handleSelectedProduct={handleSelectedProduct}></Allproducts>
+        <CartContainer isActive={isActive} ></CartContainer>
       </div>
     </div>
   );
