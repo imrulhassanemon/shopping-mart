@@ -56,8 +56,8 @@ const App = () => {
     <div>
       <Navbar selectedProduct={selectedProduct}></Navbar>
       <div className="flex justify-around mx-5">
-        <Allproducts handleSelectedProduct={handleSelectedProduct}></Allproducts>
-        <CartContainer isActive={isActive} ></CartContainer>
+        <Allproducts  handleSelectedProduct={handleSelectedProduct}></Allproducts>
+        <CartContainer handleIsActiveStatus={handleIsActiveStatus} isActive={isActive} ></CartContainer>
       </div>
     </div>
   );

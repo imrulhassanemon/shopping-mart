@@ -1,6 +1,6 @@
 import React from "react";
 
-const SingleProducts = ({ product , handleSelectedProduct }) => {
+const SingleProducts = ({ product , handleSelectedProduct}) => {
   const { id, title, price, description, category, image } = product;
   // console.log(id, title, price, description, category, image);
 
