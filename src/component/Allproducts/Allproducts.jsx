@@ -1,7 +1,7 @@
 import React from "react";
 import SingleProducts from "../SingleProducts/SingleProducts";
 
-const Allproducts = ({ handleSelectedProduct, }) => {
+const Allproducts = ( {handleSelectedProduct} ) => {
   const [products, setProuducts] = React.useState([]);
 
   React.useEffect(() => {
@@ -18,7 +18,7 @@ const Allproducts = ({ handleSelectedProduct, }) => {
       <h1>All products.jsx</h1>
       <div className="grid grid-cols-2 gap-4">
         {products.map((product) => (
-          <SingleProducts key={product.id} product={product} handleSelectedProduct={handleSelectedProduct} ></SingleProducts>
+          <SingleProducts handleSelectedProduct={handleSelectedProduct} key={product.id} product={product} ></SingleProducts>
         ))}
       </div>
     </div>

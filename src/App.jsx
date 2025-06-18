@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Navbar from "./component/header/navbar";
 import Allproducts from "./component/Allproducts/Allproducts";
 import CartContainer from "./component/CartContainer/CartContainer";
+import toast from "react-hot-toast";
 
 const App = () => {
 
@@ -14,23 +15,19 @@ const App = () => {
 
 
 
-
   const [selectedProduct, setSelectedProduct] = useState([])
 
+  const handleSelectedProduct = (product) => {
 
-  const handleSelectedProduct = (product)=> {
+
+    if(selectedProduct.find((item) => item.id === product.id)) {
+      toast.error('This product is already in the cart')
+      return;
+    }
+
+    setSelectedProduct([...selectedProduct, product])
     
-    // const isAlreadySelected = selectedProduct.find((item) => item.id === product.id);
-    // if (isAlreadySelected) {
-    //   setSelectedProduct(selectedProduct.filter((item) => item.id !== product.id));
-    // } else {
-    //   setSelectedProduct([...selectedProduct, product]);
-    // }
-    setSelectedProduct([...selectedProduct, product]);;
-
   }
-
-  console.log(selectedProduct);
 
 
 
@@ -49,14 +46,13 @@ const App = () => {
       })
     }
   }
-  console.log(isActive);
 
 
   return (
     <div>
-      <Navbar selectedProduct={selectedProduct}></Navbar>
+      <Navbar  selectedProduct={selectedProduct}></Navbar>
       <div className="flex justify-around mx-5">
-        <Allproducts  handleSelectedProduct={handleSelectedProduct}></Allproducts>
+        <Allproducts handleSelectedProduct={handleSelectedProduct}></Allproducts>
         <CartContainer handleIsActiveStatus={handleIsActiveStatus} isActive={isActive} ></CartContainer>
       </div>
     </div>

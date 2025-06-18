@@ -1,10 +1,9 @@
 import React from "react";
 
-const SingleProducts = ({ product , handleSelectedProduct}) => {
+const SingleProducts = ({ product, handleSelectedProduct }) => {
   const { id, title, price, description, category, image } = product;
   // console.log(id, title, price, description, category, image);
 
-  console.log(handleSelectedProduct);
 
   return (
     <div className="card bg-base-100 w-96 shadow-sm border-2 border-gray-200">
@@ -25,7 +24,7 @@ const SingleProducts = ({ product , handleSelectedProduct}) => {
         </p>  
         <div className="card-actions justify-end">
           <div className="badge badge-outline">Fashion</div>
-          <button className="btn bg-amber-300" onClick={() => handleSelectedProduct(product)}>add to cart</button> 
+          <button className="btn bg-amber-300" onClick={() =>handleSelectedProduct(product)}>add to cart</button> 
         </div>
       </div>
     </div>
