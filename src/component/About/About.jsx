@@ -1,9 +1,17 @@
 import React from 'react';
+import Cart from '../Cart/Cart';
 
-const About = () => {
+const About = ({selectedProduct}) => {
+
+    
     return (
         <div>
-          About.jsx  
+          <h1>This is the selected product</h1>
+          {
+            selectedProduct.map((product)=>{
+              return <Cart key={product.id} product={product}></Cart>
+            })
+          }
         </div>
     );
 };
