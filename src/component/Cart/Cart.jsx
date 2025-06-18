@@ -2,8 +2,6 @@ import React from "react";
 
 const Cart = ({ product }) => {
   const { id, title, price, description, category, image } = product;
-
-  console.log(product);
   return (
     <div className="card bg-base-100 w-96 shadow-sm border-2 border-gray-200">
       <figure>
