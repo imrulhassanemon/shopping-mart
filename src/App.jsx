@@ -29,6 +29,11 @@ const App = () => {
     
   }
 
+  const handleRemoveProduct = (id) => {
+    const updatedProducts = selectedProduct.filter(p => p.id !== id)
+    setSelectedProduct(updatedProducts)
+  }
+
 
 
 
@@ -53,7 +58,7 @@ const App = () => {
       <Navbar  selectedProduct={selectedProduct}></Navbar>
       <div className="flex justify-around mx-5">
         <Allproducts handleSelectedProduct={handleSelectedProduct}></Allproducts>
-        <CartContainer handleIsActiveStatus={handleIsActiveStatus} isActive={isActive} selectedProduct={selectedProduct} ></CartContainer>
+        <CartContainer handleIsActiveStatus={handleIsActiveStatus} isActive={isActive} selectedProduct={selectedProduct} handleRemoveProduct={handleRemoveProduct} ></CartContainer>
       </div>
     </div>
   );
