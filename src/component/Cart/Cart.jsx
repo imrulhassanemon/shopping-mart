@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 // import { MdDelete } from "react-icons/md";
 const Cart = ({ product, handleRemoveProduct, selectedProduct }) => {
-  const { id, title, price, description, category, image } = product;
+  const { id, title, price, description, category, image } = product;;
+
+
+  
+
+
+
   return (
-    <ul className="list bg-base-100 rounded-box shadow-md">
+    <ul className="list bg-base-100 rounded-box shadow-md mt-3">
       <li className="p-4 pb-2 text-xs opacity-60 tracking-wide">
-        Most played songs this week
+        Added Product to The Cart
       </li>
 
+
       <li className="list-row">
-        <div className="text-4xl font-thin opacity-30 tabular-nums">02</div>
+        <div className="text-4xl font-thin opacity-30 tabular-nums">{ }</div>
         <div>
           <img
             className="size-10 rounded-box"
@@ -30,7 +37,7 @@ const Cart = ({ product, handleRemoveProduct, selectedProduct }) => {
         </button>
       </li>
 
-      total:{" "}
+      
       
     </ul>
   );

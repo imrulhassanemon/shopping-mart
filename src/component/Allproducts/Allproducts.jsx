@@ -11,8 +11,6 @@ const Allproducts = ( {handleSelectedProduct} ) => {
       .catch((err) => console.error(err));
   }, []);
 
-  console.log(products);
-
   return (
     <div>
       <h1>All products.jsx</h1>

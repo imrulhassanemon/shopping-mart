@@ -7,6 +7,7 @@ const CartContainer = ({
   handleRemoveProduct,
   selectedProduct,
   isActive,
+
 }) => {
   return (
     <div>

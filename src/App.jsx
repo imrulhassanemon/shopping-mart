@@ -19,7 +19,6 @@ const App = () => {
 
   const handleSelectedProduct = (product) => {
 
-
     if(selectedProduct.find((item) => item.id === product.id)) {
       toast.error('This product is already in the cart')
       return;
